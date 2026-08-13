@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - AGRIVAL</title>
+<meta name="description" content="Contactez AGRIVAL Algérie pour vos demandes de devis, spécifications techniques et support B2B."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>🌾</text></svg>"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex flex-col w-full bg-primary text-on-primary border-b border-outline-variant full-width top-0 z-50 sticky">
+<div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-4 flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">agriculture</span>
+<span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">AGRIVAL</span>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a data-nav-link href="catalogue.html?cat=cereals" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Céréales</a>
+<a data-nav-link href="catalogue.html?cat=oils" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Huiles Végétales</a>
+<a data-nav-link href="catalogue.html?cat=machinery" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Matériel</a>
+<a data-nav-link href="catalogue.html?cat=hydraulics" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Hydraulique</a>
+<a data-nav-link href="catalogue.html?cat=phyto" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Phytosanitaire</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-4 border-r border-outline-variant pr-4">
+<button class="text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded-full hover:bg-primary-container" title="Langue">
+<span class="material-symbols-outlined">language</span>
+</button>
+<a href="contact.html" class="text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded-full hover:bg-primary-container" title="Mon compte">
+<span class="material-symbols-outlined">account_circle</span>
+</a>
+</div>
+<a href="devis.html" class="hidden md:block bg-secondary-fixed text-on-secondary-fixed text-label-md font-label-md px-4 py-2 rounded hover:bg-secondary-container transition-colors font-bold uppercase tracking-wider">
+                    Espace Devis
+                </a>
+<a href="panier.html" class="relative flex items-center gap-2 text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded hover:bg-primary-container">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="hidden md:inline text-label-md font-label-md">Panier</span>
+<span data-cart-count class="hidden absolute -top-1 -right-1 md:relative md:top-0 md:right-0 md:ml-1 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+</a>
+<button id="mobile-menu-btn" class="md:hidden text-on-primary p-2" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Mobile Drawer -->
+<div id="mobile-menu-backdrop" class="hidden opacity-0 fixed inset-0 bg-black/50 z-[60] md:hidden"></div>
+<aside id="mobile-menu" class="translate-x-full fixed top-0 right-0 h-full w-[86%] max-w-sm bg-surface-container-lowest z-[70] md:hidden flex flex-col overflow-y-auto shadow-2xl" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+<div class="flex items-center justify-between px-5 py-4 bg-primary text-on-primary shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl">agriculture</span>
+<span class="text-headline-sm font-headline-sm font-bold">AGRIVAL</span>
+</div>
+<button id="mobile-menu-close" class="p-2 -mr-2 text-on-primary" aria-label="Fermer le menu">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-5 pt-5 pb-4 flex items-center gap-3 border-b border-outline-variant">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<div>
+<p class="text-headline-sm font-headline-sm font-bold text-primary leading-tight">Secteurs Industriels</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Solutions Techniques B2B</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 px-3 py-3">
+<a data-nav-link href="catalogue.html?cat=cereals" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">grass</span> Céréales &amp; Nutrition</a>
+<a data-nav-link href="catalogue.html?cat=oils" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">oil_barrel</span> Huiles &amp; Graisses</a>
+<a data-nav-link href="catalogue.html?cat=machinery" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">agriculture</span> Matériel</a>
+<a data-nav-link href="catalogue.html?cat=hydraulics" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">plumbing</span> Hydraulique</a>
+<a data-nav-link href="catalogue.html?cat=phyto" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">psychiatry</span> Phytosanitaire</a>
+</nav>
+<div class="px-5 mt-1">
+<a href="devis.html" class="btn-primary w-full text-center block">Demander un Devis Technique</a>
+</div>
+<div class="grid grid-cols-2 gap-3 px-5 mt-4">
+<a href="devis.html" class="flex items-center justify-center gap-2 border-2 border-secondary text-secondary rounded py-2.5 text-label-md font-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">request_quote</span> Devis
+</a>
+<a href="panier.html" class="relative flex items-center justify-center gap-2 border-2 border-outline-variant text-on-surface rounded py-2.5 text-label-md font-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">shopping_cart</span> Panier
+<span data-cart-count class="hidden absolute -top-2 -right-2 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+</a>
+</div>
+<div class="mt-auto px-5 py-5 border-t border-outline-variant space-y-1">
+<a href="contact.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg">support_agent</span> Contacter le Support</a>
+<a href="entreprise.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg">verified</span> Certifications</a>
+<div class="flex items-center gap-2 pt-3">
+<button class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant text-body-sm font-body-sm hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-lg">language</span> FR
+</button>
+<a href="contact.html" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant text-body-sm font-body-sm hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-lg">account_circle</span> Compte
+</a>
+</div>
+</div>
+</aside>
+<div class="flex flex-1 max-w-container-max mx-auto w-full">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-full py-4 bg-surface-container-lowest text-primary docked h-[calc(100vh-80px)] left-0 w-64 border-r border-outline-variant sticky top-[80px]">
+<div class="px-6 mb-8 mt-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm font-bold text-primary">Secteurs Industriels</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Solutions Techniques B2B</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-4">
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=cereals">
+<span class="material-symbols-outlined text-on-primary-container">grass</span> Céréales &amp; Nutrition
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=oils">
+<span class="material-symbols-outlined text-on-primary-container">oil_barrel</span> Huiles &amp; Graisses
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=machinery">
+<span class="material-symbols-outlined text-on-primary-container">agriculture</span> Matériel
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=hydraulics">
+<span class="material-symbols-outlined text-on-primary-container">plumbing</span> Hydraulique
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=phyto">
+<span class="material-symbols-outlined text-on-primary-container">psychiatry</span> Phytosanitaire
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-2">
+<a href="devis.html" class="block text-center w-full border-2 border-outline text-outline text-label-md font-label-md font-bold uppercase py-3 rounded hover:bg-surface-container-low transition-colors">
+                    Demander un Devis Technique
+                </a>
+<div class="pt-4 border-t border-outline-variant space-y-1">
+<a class="sidebar-link is-active flex items-center gap-3 px-4 py-2 rounded text-on-surface-variant hover:bg-surface-container-low text-body-sm font-body-sm" href="contact.html">
+<span class="material-symbols-outlined text-lg">support_agent</span> Contacter le Support
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded text-on-surface-variant hover:bg-surface-container-low text-body-sm font-body-sm" href="entreprise.html">
+<span class="material-symbols-outlined text-lg">verified</span> Certifications
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 px-margin-mobile md:px-margin-desktop py-5 md:py-8 bg-surface">
+<div class="mb-10">
+<h1 class="text-display-lg font-display-lg text-on-background mb-2">Contactez AGRIVAL</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl">Solutions techniques B2B pour les professionnels de l'agriculture. Notre équipe est à votre disposition pour toute demande de devis ou spécification technique.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column -->
+<div class="lg:col-span-8 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Siège Social -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex items-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl mr-3">business</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Siège Social</h3>
+</div>
+<div class="text-body-md font-body-md text-on-surface-variant space-y-2">Expéditions depuis notre plateforme centrale à Alger. Livraison sur les 58 wilayas sous 48-72h.</div>
+</div>
+<!-- Direct Contacts -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-6 shadow-sm hover:shadow-md transition-shadow">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-4 flex items-center">
+<span class="material-symbols-outlined text-secondary mr-2">contact_phone</span> Contacts Directs
+</h3>
+<ul class="space-y-4">
+<li class="flex items-center justify-between pb-2 border-b border-outline-variant">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded bg-[#fed488] text-[#261900] flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-sm">grass</span>
+</div>
+<span class="text-body-md font-body-md text-on-surface-variant font-semibold">Service Céréales</span>
+</div>
+<a class="text-body-sm font-body-sm text-primary hover:underline" href="tel:+21323405061">023 40 50 61</a>
+</li>
+<li class="flex items-center justify-between pb-2 border-b border-outline-variant">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded bg-[#717976] text-white flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-sm">agriculture</span>
+</div>
+<span class="text-body-md font-body-md text-on-surface-variant font-semibold">SAV Matériel</span>
+</div>
+<a class="text-body-sm font-body-sm text-primary hover:underline" href="tel:+21323405062">023 40 50 62</a>
+</li>
+<li class="flex items-center justify-between">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded bg-[#43655c] text-white flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-sm">plumbing</span>
+</div>
+<span class="text-body-md font-body-md text-on-surface-variant font-semibold">Hydraulique</span>
+</div>
+<a class="text-body-sm font-body-sm text-primary hover:underline" href="tel:+21323405063">023 40 50 63</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- Map / Location -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded overflow-hidden">
+<div class="p-4 border-b border-outline-variant bg-surface-container-low flex items-center justify-between">
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Localisation &amp; Logistique</h3>
+<span class="text-label-md font-label-md text-on-surface-variant bg-white px-2 py-1 border border-outline-variant rounded">Couverture 58 Wilayas</span>
+</div>
+<div class="h-64 relative w-full bg-surface-dim">
+<img class="w-full h-full object-cover" alt="Carte administrative de l'Algérie et ses 58 wilayas" src="assets/images/algeria-map.png"/>
+</div>
+<div class="p-4 bg-surface-container-lowest text-body-sm font-body-sm text-on-surface-variant">Expéditions depuis notre plateforme centrale à Alger. Livraison sur les 58 wilayas sous 48-72h.</div>
+</div>
+</div>
+<!-- Right Column: Form -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-6 shadow-sm sticky top-24">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-6 border-b-2 border-primary inline-block pb-1">Formulaire Rapide</h3>
+<form id="contact-form" class="space-y-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="societe">Raison Sociale / Société *</label>
+<input class="w-full bg-white border border-outline-variant rounded px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="societe" placeholder="Ex: AgriCorp SAS" required type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="nom">Nom du contact *</label>
+<input class="w-full bg-white border border-outline-variant rounded px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="nom" required type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="tel">Téléphone *</label>
+<input class="w-full bg-white border border-outline-variant rounded px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="tel" required type="tel"/>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="service">Service concerné</label>
+<select class="w-full bg-white border border-outline-variant rounded px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-on-surface-variant" id="service">
+<option>Demande de devis général</option>
+<option>Pôle Céréales &amp; Huiles</option>
+<option>SAV &amp; Pièces Détachées</option>
+<option>Support Technique Phytosanitaire</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="message">Spécifications de la demande *</label>
+<textarea class="w-full bg-white border border-outline-variant rounded px-3 py-2 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none" id="message" placeholder="Veuillez détailler vos références techniques..." required rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 px-4 rounded hover:bg-opacity-90 transition-colors uppercase tracking-wider mt-4" type="submit">
+                                Envoyer la demande
+                            </button>
+<p id="contact-confirm" class="hidden text-body-sm font-body-sm text-[#228B22] font-semibold text-center mt-2">Merci ! Votre demande a bien été envoyée, notre équipe vous recontactera sous 24-48h.</p>
+<p class="text-[10px] text-outline mt-2 text-center leading-tight">En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de la demande de devis et de la relation commerciale qui peut en découler.</p>
+</form>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-tertiary text-on-tertiary w-full border-t border-tertiary-container mt-auto">
+<div class="px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<a href="index.html" class="text-headline-sm font-headline-sm font-black text-on-tertiary">AGRIVAL</a>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="entreprise.html">Mentions Légales</a>
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="contact.html">Couverture Géographique</a>
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="entreprise.html">Certifications Techniques</a>
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="entreprise.html">Assurance Qualité</a>
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="entreprise.html">Politique de Confidentialité</a>
+</nav>
+<div class="text-body-sm font-body-sm text-surface-dim">
+                © 2024 AGRIVAL SARL - Excellence Industrielle Agricole. Tous droits réservés.
+            </div>
+</div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('contact-confirm').classList.remove('hidden');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

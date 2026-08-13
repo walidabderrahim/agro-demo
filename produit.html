@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AGRIVAL - Fiche Produit</title>
+<meta name="description" content="Fiche produit technique AGRIVAL : spécifications, disponibilité et options d'achat ou de devis."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>🌾</text></svg>"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex flex-col w-full bg-primary text-on-primary border-b border-outline-variant full-width top-0 z-50 sticky">
+<div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-4 flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">agriculture</span>
+<span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">AGRIVAL</span>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a data-nav-link href="catalogue.html?cat=cereals" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Céréales</a>
+<a data-nav-link href="catalogue.html?cat=oils" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Huiles Végétales</a>
+<a data-nav-link href="catalogue.html?cat=machinery" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Matériel</a>
+<a data-nav-link href="catalogue.html?cat=hydraulics" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Hydraulique</a>
+<a data-nav-link href="catalogue.html?cat=phyto" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Phytosanitaire</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-4 border-r border-outline-variant pr-4">
+<button class="text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded-full hover:bg-primary-container" title="Langue">
+<span class="material-symbols-outlined">language</span>
+</button>
+<a href="contact.html" class="text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded-full hover:bg-primary-container" title="Mon compte">
+<span class="material-symbols-outlined">account_circle</span>
+</a>
+</div>
+<a href="devis.html" class="hidden md:block bg-secondary-fixed text-on-secondary-fixed text-label-md font-label-md px-4 py-2 rounded hover:bg-secondary-container transition-colors font-bold uppercase tracking-wider">
+                    Espace Devis
+                </a>
+<a href="panier.html" class="relative flex items-center gap-2 text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded hover:bg-primary-container">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="hidden md:inline text-label-md font-label-md">Panier</span>
+<span data-cart-count class="hidden absolute -top-1 -right-1 md:relative md:top-0 md:right-0 md:ml-1 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+</a>
+<button id="mobile-menu-btn" class="md:hidden text-on-primary p-2" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Mobile Drawer -->
+<div id="mobile-menu-backdrop" class="hidden opacity-0 fixed inset-0 bg-black/50 z-[60] md:hidden"></div>
+<aside id="mobile-menu" class="translate-x-full fixed top-0 right-0 h-full w-[86%] max-w-sm bg-surface-container-lowest z-[70] md:hidden flex flex-col overflow-y-auto shadow-2xl" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+<div class="flex items-center justify-between px-5 py-4 bg-primary text-on-primary shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl">agriculture</span>
+<span class="text-headline-sm font-headline-sm font-bold">AGRIVAL</span>
+</div>
+<button id="mobile-menu-close" class="p-2 -mr-2 text-on-primary" aria-label="Fermer le menu">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-5 pt-5 pb-4 flex items-center gap-3 border-b border-outline-variant">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<div>
+<p class="text-headline-sm font-headline-sm font-bold text-primary leading-tight">Secteurs Industriels</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Solutions Techniques B2B</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 px-3 py-3">
+<a data-nav-link href="catalogue.html?cat=cereals" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">grass</span> Céréales &amp; Nutrition</a>
+<a data-nav-link href="catalogue.html?cat=oils" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">oil_barrel</span> Huiles &amp; Graisses</a>
+<a data-nav-link href="catalogue.html?cat=machinery" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">agriculture</span> Matériel</a>
+<a data-nav-link href="catalogue.html?cat=hydraulics" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">plumbing</span> Hydraulique</a>
+<a data-nav-link href="catalogue.html?cat=phyto" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">psychiatry</span> Phytosanitaire</a>
+</nav>
+<div class="px-5 mt-1">
+<a href="devis.html" class="btn-primary w-full text-center block">Demander un Devis Technique</a>
+</div>
+<div class="grid grid-cols-2 gap-3 px-5 mt-4">
+<a href="devis.html" class="flex items-center justify-center gap-2 border-2 border-secondary text-secondary rounded py-2.5 text-label-md font-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">request_quote</span> Devis
+</a>
+<a href="panier.html" class="relative flex items-center justify-center gap-2 border-2 border-outline-variant text-on-surface rounded py-2.5 text-label-md font-label-md font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-lg">shopping_cart</span> Panier
+<span data-cart-count class="hidden absolute -top-2 -right-2 bg-secondary-fixed text-on-secondary-fixed text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+</a>
+</div>
+<div class="mt-auto px-5 py-5 border-t border-outline-variant space-y-1">
+<a href="contact.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg">support_agent</span> Contacter le Support</a>
+<a href="entreprise.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg">verified</span> Certifications</a>
+<div class="flex items-center gap-2 pt-3">
+<button class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant text-body-sm font-body-sm hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-lg">language</span> FR
+</button>
+<a href="contact.html" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant text-body-sm font-body-sm hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-lg">account_circle</span> Compte
+</a>
+</div>
+</div>
+</aside>
+<div class="flex flex-1 max-w-container-max mx-auto w-full">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-full py-4 bg-surface-container-lowest text-primary docked h-[calc(100vh-80px)] left-0 w-64 border-r border-outline-variant sticky top-[80px]">
+<div class="px-6 mb-8 mt-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm font-bold text-primary">Secteurs Industriels</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Solutions Techniques B2B</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-4">
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=cereals">
+<span class="material-symbols-outlined text-on-primary-container">grass</span> Céréales &amp; Nutrition
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=oils">
+<span class="material-symbols-outlined text-on-primary-container">oil_barrel</span> Huiles &amp; Graisses
+</a>
+<a class="sidebar-link is-active flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=machinery">
+<span class="material-symbols-outlined text-on-primary-container">agriculture</span> Matériel
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=hydraulics">
+<span class="material-symbols-outlined text-on-primary-container">plumbing</span> Hydraulique
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=phyto">
+<span class="material-symbols-outlined text-on-primary-container">psychiatry</span> Phytosanitaire
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-2">
+<a href="devis.html" class="block text-center w-full border-2 border-outline text-outline text-label-md font-label-md font-bold uppercase py-3 rounded hover:bg-surface-container-low transition-colors">
+                    Demander un Devis Technique
+                </a>
+<div class="pt-4 border-t border-outline-variant space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 rounded text-on-surface-variant hover:bg-surface-container-low text-body-sm font-body-sm" href="contact.html">
+<span class="material-symbols-outlined text-lg">support_agent</span> Contacter le Support
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded text-on-surface-variant hover:bg-surface-container-low text-body-sm font-body-sm" href="entreprise.html">
+<span class="material-symbols-outlined text-lg">verified</span> Certifications
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 bg-surface p-margin-mobile md:p-margin-desktop">
+<nav class="text-body-sm font-body-sm text-on-surface-variant mb-6 flex items-center gap-2">
+<a href="catalogue.html" class="hover:text-primary hover:underline">Catalogue</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface font-bold">Fiche produit</span>
+</nav>
+<div class="max-w-container-max mx-auto space-y-12">
+
+<!-- Product 1: Direct Sale -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded p-6 shadow-sm">
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="w-full lg:w-1/3">
+<div class="aspect-square bg-surface-container-lowest border border-outline-variant rounded flex items-center justify-center relative overflow-hidden">
+<img class="object-contain w-full h-full p-4" alt="Aliment Bétail Croissance 25kg" src="assets/images/product-detail-cereal-bag.jpg"/>
+<div class="absolute top-4 left-4 bg-[#e9c176] text-[#261900] text-label-md font-label-md px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">grass</span> Céréales
+</div>
+</div>
+</div>
+<div class="w-full lg:w-2/3 flex flex-col">
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-2">Aliment Bétail Croissance 25kg</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Mélange céréalier enrichi pour bovins en phase de croissance. Conditionnement standard pour manutention manuelle.</p>
+<div class="flex items-baseline gap-4 mb-8">
+<span class="text-display-lg font-display-lg text-primary">2,100 DZD</span>
+<span class="text-body-sm font-body-sm text-outline">HT / Unité</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8 border-y border-outline-variant py-4">
+<div>
+<span class="block text-label-md font-label-md text-outline uppercase tracking-wider">Conditionnement</span>
+<span class="text-technical-data font-technical-data text-on-surface">Sac 25kg (Palettes de 40)</span>
+</div>
+<div>
+<span class="block text-label-md font-label-md text-outline uppercase tracking-wider">Disponibilité</span>
+<span class="text-technical-data font-technical-data text-[#43655c] flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> En Stock (Dépôt Alger)</span>
+</div>
+</div>
+<div class="mt-auto flex flex-col sm:flex-row gap-4 items-end">
+<div class="flex flex-col gap-2 w-full sm:w-32">
+<label class="text-label-md font-label-md text-on-surface" for="qty-product-1">Quantité</label>
+<div class="flex items-stretch border border-outline-variant rounded overflow-hidden">
+<button type="button" data-step="qty-product-1" data-action="decrement" class="px-3 bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-bold">−</button>
+<input id="qty-product-1" class="w-full text-center border-x border-outline-variant focus:outline-none text-body-md" min="1" type="number" value="1"/>
+<button type="button" data-step="qty-product-1" data-action="increment" class="px-3 bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-bold">+</button>
+</div>
+</div>
+<button data-add-cart class="bg-[#775a19] text-white font-label-md text-label-md px-6 py-3 uppercase rounded tracking-wider hover:opacity-90 transition-opacity flex-1 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add_shopping_cart</span> Ajouter au panier
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Product 2: Heavy Equipment (Quote Request) -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded p-6 shadow-sm">
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="w-full lg:w-1/3">
+<div class="aspect-square bg-surface-container-lowest border border-outline-variant rounded flex items-center justify-center relative overflow-hidden">
+<img class="object-contain w-full h-full p-4" alt="Pompe Hydraulique Haute Pression HPX-5000" src="assets/images/product-detail-hydraulic-pump.jpg"/>
+<div class="absolute top-4 left-4 bg-[#717976] text-white text-label-md font-label-md px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">agriculture</span> Matériel
+</div>
+</div>
+</div>
+<div class="w-full lg:w-2/3 flex flex-col">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">Pompe Hydraulique Haute Pression HPX-5000</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Système de pompage industriel pour équipements lourds agricoles. Conception renforcée pour environnements extrêmes.</p>
+<div class="bg-surface-container-low border border-outline-variant rounded p-4 mb-6">
+<h3 class="text-label-md font-label-md text-on-surface uppercase tracking-wider mb-3">Résumé Spécifications Techniques</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4">
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span class="text-technical-data font-technical-data text-outline">Pression Max</span>
+<span class="text-technical-data font-technical-data text-on-surface">350 bar</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span class="text-technical-data font-technical-data text-outline">Débit</span>
+<span class="text-technical-data font-technical-data text-on-surface">120 L/min</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span class="text-technical-data font-technical-data text-outline">Poids</span>
+<span class="text-technical-data font-technical-data text-on-surface">185 kg</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span class="text-technical-data font-technical-data text-outline">Raccordement</span>
+<span class="text-technical-data font-technical-data text-on-surface">Bride SAE 1" 1/4</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 mb-8">
+<button class="border-2 border-[#717976] text-[#717976] font-label-md text-label-md px-4 py-2 uppercase rounded tracking-wider hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span> Fiche Technique
+</button>
+<button class="border-2 border-[#717976] text-[#717976] font-label-md text-label-md px-4 py-2 uppercase rounded tracking-wider hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">security</span> FDS
+</button>
+</div>
+<div class="mt-auto">
+<a href="devis.html" class="w-full bg-primary text-white font-label-md text-label-md px-6 py-4 uppercase rounded tracking-wider hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">request_quote</span> Demander un devis technique
+</a>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full bg-tertiary text-on-tertiary border-t border-tertiary-container mt-auto">
+<div class="px-margin-mobile lg:px-margin-desktop py-12 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-headline-sm font-headline-sm font-black text-on-tertiary">AGRIVAL</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="entreprise.html">Mentions Légales</a>
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="contact.html">Couverture Géographique</a>
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="entreprise.html">Certifications Techniques</a>
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="entreprise.html">Assurance Qualité</a>
+<a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="entreprise.html">Politique de Confidentialité</a>
+</div>
+</div>
+<div class="text-center pb-8 text-body-sm font-body-sm text-surface-dim opacity-70">
+            © 2024 AGRIVAL SARL - Excellence Industrielle Agricole. Tous droits réservés.
+        </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

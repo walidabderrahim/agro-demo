@@ -1,0 +1,160 @@
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Garde-fou responsive : aucune barre de défilement / bande blanche horizontale,
+   quelle que soit la cause (police d'icônes pas encore chargée, mot trop long, etc.) */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+/* Autorise les items flex de l'en-tête à rétrécir sous leur taille de contenu
+   (comportement par défaut du flexbox = min-width:auto, source classique de débordement) */
+header .flex,
+header nav {
+  min-width: 0;
+}
+
+/* Trame 4px pour les zones techniques */
+.baseline-grid {
+  background-image: linear-gradient(to bottom, transparent 3px, #f0f3ff 4px);
+  background-size: 100% 4px;
+}
+
+/* Navigation active (header + sidebar) */
+.is-active {
+  opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.sidebar-link.is-active {
+  background-color: #e7eeff;
+  color: #01261f;
+  font-weight: 700;
+}
+.sidebar-link.is-active .material-symbols-outlined {
+  color: #01261f;
+}
+
+/* Filtres catalogue actifs */
+.is-active-filter {
+  background-color: #01261f;
+  color: #ffffff;
+  border-color: #01261f;
+}
+.is-active-filter .material-symbols-outlined,
+.is-active-filter span {
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #01261f;
+  color: #ffffff;
+}
+
+/* Variantes d'icônes (rempli / contour) utilisées sur certaines pages */
+.material-symbols-outlined[data-weight='fill'],
+.material-symbols-outlined.fill-1 {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Panier : carte translucide */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e2e8f0;
+}
+
+/* Badges secteur (catalogue, panier, fiche produit) */
+.badge-cereals { background-color: #ffd700; color: #333333; }
+.badge-oils { background-color: #ff8c00; color: #ffffff; }
+.badge-machinery { background-color: #708090; color: #ffffff; }
+.badge-hydraulics { background-color: #4682b4; color: #ffffff; }
+.badge-phyto { background-color: #228b22; color: #ffffff; }
+
+/* Boutons d'action produit */
+.btn-primary {
+  background-color: #006400;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 0.125rem;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover { background-color: #004d00; }
+
+.btn-secondary {
+  background-color: #daa520;
+  color: #333333;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 0.125rem;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-secondary:hover { background-color: #b8860b; }
+
+.btn-outline {
+  border: 2px solid #708090;
+  color: #708090;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 0.125rem;
+  padding: 0.5625rem 1.25rem;
+  transition: background-color 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-outline:hover { background-color: #f0f3ff; }
+
+/* Drawer de navigation mobile */
+#mobile-menu {
+  transition: transform 0.28s ease-out;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+#mobile-menu-backdrop {
+  transition: opacity 0.28s ease-out;
+}
+body.mobile-menu-open {
+  overflow: hidden;
+}
+.mobile-drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 0.75rem;
+  border-radius: 0.25rem;
+  color: #414846;
+  transition: background-color 0.15s;
+}
+.mobile-drawer-link:active,
+.mobile-drawer-link:hover {
+  background-color: #f0f3ff;
+}
+.mobile-drawer-link.is-active {
+  background-color: #e7eeff;
+  color: #01261f;
+  font-weight: 700;
+}

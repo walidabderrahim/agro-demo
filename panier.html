@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panier &amp; Commande - AGRIVAL</title>
+<meta name="description" content="Validez votre commande industrielle AGRIVAL : articles, options logistiques et récapitulatif financier."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>🌾</text></svg>"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body class="font-body-md text-on-background min-h-screen flex flex-col" style="background-color:#F7FAFC;">
+<!-- Page transactionnelle : navigation principale volontairement masquée pour concentrer l'attention sur le tunnel de commande -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<header class="mb-12 border-b border-outline-variant pb-6 flex items-center justify-between">
+<div>
+<a class="inline-flex items-center text-primary hover:text-secondary-fixed transition-colors duration-200 mb-4" href="catalogue.html">
+<span class="material-symbols-outlined mr-2">arrow_back</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Retour aux secteurs</span>
+</a>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Validation de la Commande</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Vérifiez vos articles industriels et sélectionnez vos options logistiques.</p>
+</div>
+<a href="index.html" class="hidden md:block">
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">AGRIVAL</span>
+</a>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Cart Items -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<section aria-labelledby="cart-items-heading">
+<h2 class="sr-only" id="cart-items-heading">Articles dans le panier</h2>
+<!-- Item 1 -->
+<div class="glass-card rounded p-6 flex flex-col sm:flex-row gap-6 relative group transition-all duration-200 hover:border-primary">
+<div class="w-full sm:w-32 h-32 bg-surface-container-high rounded flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" alt="Pompe Hydraulique Haute Pression HP-450" src="assets/images/cart-item-hydraulic-pump.jpg"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<div class="inline-flex items-center gap-2 bg-[#2b4c7e] text-white px-2 py-1 rounded-sm mb-2">
+<span class="material-symbols-outlined text-[14px]">plumbing</span>
+<span class="font-label-md text-label-md uppercase">Hydraulique</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Pompe Hydraulique Haute Pression HP-450</h3>
+<p class="font-technical-data text-technical-data text-on-surface-variant mt-1">Réf. : HYD-450-XXL | Débit: 450L/min</p>
+</div>
+<button aria-label="Supprimer l'article" class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex items-end justify-between mt-6">
+<div class="flex items-center border border-outline-variant rounded bg-surface">
+<button type="button" data-step="qty-item-1" data-action="decrement" aria-label="Diminuer quantité" class="px-3 py-1 text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<input id="qty-item-1" aria-label="Quantité" class="w-12 text-center bg-transparent border-none focus:ring-0 font-technical-data text-technical-data text-primary" min="1" type="number" value="2"/>
+<button type="button" data-step="qty-item-1" data-action="increment" aria-label="Augmenter quantité" class="px-3 py-1 text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="text-right">
+<p class="font-technical-data text-technical-data text-on-surface-variant line-through">470 000 DZD</p>
+<p class="font-headline-md text-headline-md text-primary">430 000 DZD <span class="font-label-md text-label-md text-outline">/unité</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="glass-card rounded p-6 flex flex-col sm:flex-row gap-6 mt-4 relative group transition-all duration-200 hover:border-primary">
+<div class="w-full sm:w-32 h-32 bg-surface-container-high rounded flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" alt="Huile de Tournesol Industrielle Brut" src="assets/images/cart-item-oil-barrels.jpg"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<div class="inline-flex items-center gap-2 bg-[#d97706] text-white px-2 py-1 rounded-sm mb-2">
+<span class="material-symbols-outlined text-[14px]">oil_barrel</span>
+<span class="font-label-md text-label-md uppercase">Huiles Végétales</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Huile de Tournesol Industrielle Brut (Fût)</h3>
+<p class="font-technical-data text-technical-data text-on-surface-variant mt-1">Réf. : OIL-SUN-200L | Origine: EU</p>
+</div>
+<button aria-label="Supprimer l'article" class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex items-end justify-between mt-6">
+<div class="flex items-center border border-outline-variant rounded bg-surface">
+<button type="button" data-step="qty-item-2" data-action="decrement" aria-label="Diminuer quantité" class="px-3 py-1 text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<input id="qty-item-2" aria-label="Quantité" class="w-12 text-center bg-transparent border-none focus:ring-0 font-technical-data text-technical-data text-primary" min="1" type="number" value="10"/>
+<button type="button" data-step="qty-item-2" data-action="increment" aria-label="Augmenter quantité" class="px-3 py-1 text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md text-primary">50 000 DZD <span class="font-label-md text-label-md text-outline">/unité</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Logistics Section -->
+<section class="glass-card rounded p-6 mt-4">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">local_shipping</span> Options Logistiques
+</h2>
+<div class="space-y-4">
+<label class="flex items-start p-4 border border-outline-variant rounded cursor-pointer hover:border-primary transition-colors bg-surface-container-lowest">
+<div class="flex-shrink-0 mt-1">
+<input checked class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="shipping" type="radio" value="freight"/>
+</div>
+<div class="ml-4 flex-grow">
+<span class="block font-headline-sm text-headline-sm text-primary">Fret Industriel Standard</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1">Livraison par semi-remorque. Délai estimé: 3-5 jours ouvrés.</span>
+</div>
+<div class="ml-4 flex-shrink-0 text-right">
+<span class="block font-technical-data text-technical-data text-primary">51 000 DZD</span>
+</div>
+</label>
+<label class="flex items-start p-4 border border-outline-variant rounded cursor-pointer hover:border-primary transition-colors bg-surface-container-lowest">
+<div class="flex-shrink-0 mt-1">
+<input class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="shipping" type="radio" value="pickup"/>
+</div>
+<div class="ml-4 flex-grow">
+<span class="block font-headline-sm text-headline-sm text-primary">Retrait en Dépôt Central</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1">Enlèvement par vos soins au dépôt logistique (Zone Industrielle Rouiba, Alger).</span>
+</div>
+<div class="ml-4 flex-shrink-0 text-right">
+<span class="block font-technical-data text-technical-data text-primary">Gratuit</span>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary & Checkout -->
+<div class="lg:col-span-4">
+<div class="glass-card rounded p-6 sticky top-6">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-6">Récapitulatif Financier</h2>
+<div class="space-y-4 mb-6">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sous-total HT</span>
+<span class="font-technical-data text-technical-data text-primary">1 360 000 DZD</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Frais de port (Fret Standard)</span>
+<span class="font-technical-data text-technical-data text-primary">51 000 DZD</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">TVA (20%)</span>
+<span class="font-technical-data text-technical-data text-primary">282 200 DZD</span>
+</div>
+<div class="border-t border-outline-variant pt-4 mt-4">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Total TTC</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">1 693 200 DZD</span>
+</div>
+<p class="text-right font-label-md text-label-md text-outline mt-1">Devise: DZD</p>
+</div>
+</div>
+<div class="mb-6">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2" for="promo">Code Référence Chantier / Promo</label>
+<div class="flex">
+<input class="flex-grow bg-white border border-[#CBD5E0] focus:border-primary focus:ring-1 focus:ring-primary rounded-l px-3 py-2 font-technical-data text-technical-data outline-none" id="promo" placeholder="Ex: CH-2024-X" type="text"/>
+<button class="bg-surface-container-high text-primary px-4 py-2 border border-l-0 border-[#CBD5E0] rounded-r font-label-md text-label-md hover:bg-surface-dim transition-colors">APPLIQUER</button>
+</div>
+</div>
+<div class="space-y-3">
+<a href="devis.html" class="w-full bg-primary text-on-primary font-label-md text-label-md uppercase py-4 rounded hover:bg-primary-container transition-colors duration-200 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">lock</span> Valider la Commande
+</a>
+<a href="devis.html" class="w-full bg-transparent border-2 border-outline text-outline font-label-md text-label-md uppercase py-3 rounded hover:bg-surface-container-lowest transition-colors duration-200 flex justify-center items-center">
+                            Générer Devis Proforma
+                        </a>
+</div>
+<div class="mt-6 flex items-start gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-xs">Paiement sécurisé. Les données de transaction sont cryptées selon les normes industrielles en vigueur.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto border-t border-tertiary-container bg-tertiary text-on-tertiary mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div>
+<a href="index.html" class="text-headline-sm font-headline-sm font-black text-on-tertiary">AGRIVAL</a>
+<p class="text-body-sm font-body-sm text-surface-dim mt-2">© 2024 AGRIVAL SARL - Excellence Industrielle Agricole. Tous droits réservés.</p>
+</div>
+<nav class="flex flex-wrap gap-4">
+<a class="text-label-md font-label-md text-surface-dim hover:text-on-tertiary hover:underline transition-all duration-200" href="entreprise.html">Mentions Légales</a>
+<a class="text-label-md font-label-md text-surface-dim hover:text-on-tertiary hover:underline transition-all duration-200" href="contact.html">Couverture Géographique</a>
+<a class="text-label-md font-label-md text-surface-dim hover:text-on-tertiary hover:underline transition-all duration-200" href="entreprise.html">Certifications Techniques</a>
+<a class="text-label-md font-label-md text-surface-dim hover:text-on-tertiary hover:underline transition-all duration-200" href="entreprise.html">Assurance Qualité</a>
+<a class="text-label-md font-label-md text-surface-dim hover:text-on-tertiary hover:underline transition-all duration-200" href="entreprise.html">Politique de Confidentialité</a>
+</nav>
+</div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
