@@ -1,4 +1,47 @@
+/* Polices de texte hébergées localement (sous-ensemble latin, suffisant pour le français) :
+   Google Fonts renvoyait des 404 intermittents sur certains fichiers, provoquant des ratés
+   d'affichage à chaque navigation. Auto-hébergement = zéro dépendance réseau externe. */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url('../fonts/hanken-grotesk-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/inter-latin.woff2') format('woff2');
+}
+
+/* Police d'icônes hébergée localement (sous-ensemble des icônes utilisées sur le site) :
+   évite toute dépendance réseau externe qui provoquait un texte brut ("account_circle", "chat"...)
+   affiché à la place des icônes en cas de chargement lent ou instable de Google Fonts. */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('../fonts/material-symbols-outlined.woff2') format('woff2');
+}
 .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
@@ -25,7 +68,7 @@ header nav {
 
 /* Trame 4px pour les zones techniques */
 .baseline-grid {
-  background-image: linear-gradient(to bottom, transparent 3px, #f0f3ff 4px);
+  background-image: linear-gradient(to bottom, transparent 3px, #f1f3ef 4px);
   background-size: 100% 4px;
 }
 
@@ -35,27 +78,27 @@ header nav {
   background-color: rgba(255, 255, 255, 0.12);
 }
 .sidebar-link.is-active {
-  background-color: #e7eeff;
-  color: #01261f;
+  background-color: #e9ece6;
+  color: #0b5c34;
   font-weight: 700;
 }
 .sidebar-link.is-active .material-symbols-outlined {
-  color: #01261f;
+  color: #0b5c34;
 }
 
 /* Filtres catalogue actifs */
-.is-active-filter {
-  background-color: #01261f;
-  color: #ffffff;
-  border-color: #01261f;
+a.is-active-filter {
+  background-color: #0b5c34;
+  color: #ffffff !important;
+  border-color: #0b5c34;
 }
-.is-active-filter .material-symbols-outlined,
-.is-active-filter span {
-  color: #ffffff;
+a.is-active-filter .material-symbols-outlined,
+a.is-active-filter span {
+  color: #ffffff !important;
 }
 
 ::selection {
-  background-color: #01261f;
+  background-color: #0b5c34;
   color: #ffffff;
 }
 
@@ -73,15 +116,18 @@ header nav {
 }
 
 /* Badges secteur (catalogue, panier, fiche produit) */
-.badge-cereals { background-color: #ffd700; color: #333333; }
-.badge-oils { background-color: #ff8c00; color: #ffffff; }
-.badge-machinery { background-color: #708090; color: #ffffff; }
-.badge-hydraulics { background-color: #4682b4; color: #ffffff; }
-.badge-phyto { background-color: #228b22; color: #ffffff; }
+.badge-irrigation { background-color: #2f6690; color: #ffffff; }
+.badge-phyto { background-color: #5b8c3a; color: #ffffff; }
+.badge-gardening { background-color: #4a7c3a; color: #ffffff; }
+.badge-garden-tools { background-color: #5b6660; color: #ffffff; }
+.badge-seeds { background-color: #f0b429; color: #2b1900; }
+.badge-vitamins { background-color: #7c5cbf; color: #ffffff; }
+.badge-farm-tools { background-color: #4b5650; color: #ffffff; }
+.badge-beekeeping { background-color: #e8890c; color: #ffffff; }
 
 /* Boutons d'action produit */
 .btn-primary {
-  background-color: #006400;
+  background-color: #0b5c34;
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
@@ -94,11 +140,11 @@ header nav {
   justify-content: center;
   gap: 0.5rem;
 }
-.btn-primary:hover { background-color: #004d00; }
+.btn-primary:hover { background-color: #08492a; }
 
 .btn-secondary {
-  background-color: #daa520;
-  color: #333333;
+  background-color: #f5a93e;
+  color: #2b1900;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -110,11 +156,11 @@ header nav {
   justify-content: center;
   gap: 0.5rem;
 }
-.btn-secondary:hover { background-color: #b8860b; }
+.btn-secondary:hover { background-color: #d6841a; }
 
 .btn-outline {
-  border: 2px solid #708090;
-  color: #708090;
+  border: 2px solid #7a8279;
+  color: #4b5650;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -126,7 +172,7 @@ header nav {
   justify-content: center;
   gap: 0.5rem;
 }
-.btn-outline:hover { background-color: #f0f3ff; }
+.btn-outline:hover { background-color: #f1f3ef; }
 
 /* Drawer de navigation mobile */
 #mobile-menu {
@@ -140,21 +186,115 @@ header nav {
 body.mobile-menu-open {
   overflow: hidden;
 }
+
+/* Overlay de recherche produits */
+#search-overlay-backdrop {
+  transition: opacity 0.2s ease-out;
+}
+#search-overlay {
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+body.search-open {
+  overflow: hidden;
+}
+
+/* Barre d'action collante (fiche produit, mobile uniquement) */
+#product-sticky-bar {
+  display: none;
+}
+#product-sticky-bar.is-active {
+  display: flex;
+}
+@media (min-width: 768px) {
+  #product-sticky-bar.is-active {
+    display: none;
+  }
+}
+/* Écarte la bulle WhatsApp flottante de la barre collante sur mobile */
+@media (max-width: 767px) {
+  #product-whatsapp-fab {
+    bottom: 6rem;
+  }
+}
 .mobile-drawer-link {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.85rem 0.75rem;
   border-radius: 0.25rem;
-  color: #414846;
+  color: #4b5650;
   transition: background-color 0.15s;
 }
 .mobile-drawer-link:active,
 .mobile-drawer-link:hover {
-  background-color: #f0f3ff;
+  background-color: #f1f3ef;
 }
 .mobile-drawer-link.is-active {
-  background-color: #e7eeff;
-  color: #01261f;
+  background-color: #e9ece6;
+  color: #0b5c34;
   font-weight: 700;
+}
+
+/* Empêche les mots longs sans espace (Hydraulique, Phytosanitaire...) de déborder
+   des liens de navigation étroits (sidebar, drawer, filtres catalogue) */
+.sidebar-link,
+.mobile-drawer-link,
+[data-filter-link] {
+  overflow-wrap: break-word;
+}
+
+/* Bulle flottante WhatsApp */
+.whatsapp-fab {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 40;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background-color: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32);
+}
+.whatsapp-fab .material-symbols-outlined {
+  font-size: 30px;
+  color: #ffffff;
+}
+.whatsapp-fab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: #25d366;
+  z-index: -1;
+  animation: whatsapp-pulse 2.2s ease-out infinite;
+}
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+@media (max-width: 640px) {
+  .whatsapp-fab {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  .whatsapp-fab .material-symbols-outlined {
+    font-size: 28px;
+  }
 }

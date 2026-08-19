@@ -3,31 +3,32 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AGRIVAL - Fiche Produit</title>
-<meta name="description" content="Fiche produit technique AGRIVAL : spécifications, disponibilité et options d'achat ou de devis."/>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>🌾</text></svg>"/>
+<title>SDDA - Fiche Produit</title>
+<meta name="description" content="Fiche produit SDDA : prix direct, achat immédiat et commande à domicile en Algérie."/>
+<link rel="icon" href="assets/images/logo.png" type="image/png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <script src="assets/js/tailwind-config.js"></script>
+<script src="assets/js/products-data.js"></script>
 <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
 <!-- TopNavBar -->
 <header class="flex flex-col w-full bg-primary text-on-primary border-b border-outline-variant full-width top-0 z-50 sticky">
 <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-4 flex items-center justify-between">
-<a href="index.html" class="flex items-center gap-2">
-<span class="material-symbols-outlined text-3xl">agriculture</span>
-<span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">AGRIVAL</span>
+<a href="index.html" class="flex items-center gap-2 bg-white rounded-lg px-3 py-1.5 shadow-sm">
+<img src="assets/images/logo.png" alt="SDDA - Société Djemaa Développement Agricole" class="h-14 sm:h-16 md:h-20 w-auto"/>
 </a>
 <nav class="hidden md:flex items-center gap-6">
-<a data-nav-link href="catalogue.html?cat=cereals" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Céréales</a>
-<a data-nav-link href="catalogue.html?cat=oils" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Huiles Végétales</a>
-<a data-nav-link href="catalogue.html?cat=machinery" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Matériel</a>
-<a data-nav-link href="catalogue.html?cat=hydraulics" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Hydraulique</a>
+<a data-nav-link href="catalogue.html?cat=irrigation" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Irrigation</a>
 <a data-nav-link href="catalogue.html?cat=phyto" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Phytosanitaire</a>
+<a data-nav-link href="catalogue.html?cat=gardening" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Jardinage</a>
+<a data-nav-link href="catalogue.html?cat=farm-tools" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Outillage Agricole</a>
+<a href="catalogue.html" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Catalogue</a>
 </nav>
 <div class="flex items-center gap-4">
+<button id="search-open-btn" class="text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded-full hover:bg-primary-container" aria-label="Rechercher un produit" title="Rechercher">
+<span class="material-symbols-outlined">search</span>
+</button>
 <div class="hidden lg:flex items-center gap-4 border-r border-outline-variant pr-4">
 <button class="text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded-full hover:bg-primary-container" title="Langue">
 <span class="material-symbols-outlined">language</span>
@@ -54,9 +55,8 @@
 <div id="mobile-menu-backdrop" class="hidden opacity-0 fixed inset-0 bg-black/50 z-[60] md:hidden"></div>
 <aside id="mobile-menu" class="translate-x-full fixed top-0 right-0 h-full w-[86%] max-w-sm bg-surface-container-lowest z-[70] md:hidden flex flex-col overflow-y-auto shadow-2xl" role="dialog" aria-modal="true" aria-label="Menu de navigation">
 <div class="flex items-center justify-between px-5 py-4 bg-primary text-on-primary shrink-0">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-2xl">agriculture</span>
-<span class="text-headline-sm font-headline-sm font-bold">AGRIVAL</span>
+<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-1.5 shadow-sm">
+<img src="assets/images/logo.png" alt="SDDA - Société Djemaa Développement Agricole" class="h-14 w-auto"/>
 </div>
 <button id="mobile-menu-close" class="p-2 -mr-2 text-on-primary" aria-label="Fermer le menu">
 <span class="material-symbols-outlined">close</span>
@@ -72,11 +72,15 @@
 </div>
 </div>
 <nav class="flex flex-col gap-1 px-3 py-3">
-<a data-nav-link href="catalogue.html?cat=cereals" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">grass</span> Céréales &amp; Nutrition</a>
-<a data-nav-link href="catalogue.html?cat=oils" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">oil_barrel</span> Huiles &amp; Graisses</a>
-<a data-nav-link href="catalogue.html?cat=machinery" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">agriculture</span> Matériel</a>
-<a data-nav-link href="catalogue.html?cat=hydraulics" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">plumbing</span> Hydraulique</a>
-<a data-nav-link href="catalogue.html?cat=phyto" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">psychiatry</span> Phytosanitaire</a>
+<a data-nav-link href="catalogue.html?cat=irrigation" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">water_drop</span><span class="min-w-0">Irrigation</span></a>
+<a data-nav-link href="catalogue.html?cat=phyto" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">psychiatry</span><span class="min-w-0">Produit Phytosanitaire</span></a>
+<a data-nav-link href="catalogue.html?cat=gardening" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">yard</span><span class="min-w-0">Jardinage</span></a>
+<a data-nav-link href="catalogue.html?cat=garden-tools" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">content_cut</span><span class="min-w-0">Outils de Jardinage</span></a>
+<a data-nav-link href="catalogue.html?cat=seeds" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">eco</span><span class="min-w-0">Semences</span></a>
+<a data-nav-link href="catalogue.html?cat=vitamins" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">science</span><span class="min-w-0">Vitamine</span></a>
+<a data-nav-link href="catalogue.html?cat=farm-tools" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">agriculture</span><span class="min-w-0">Outillage Agricole</span></a>
+<a data-nav-link href="catalogue.html?cat=beekeeping" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">hive</span><span class="min-w-0">Apiculteur</span></a>
+<a href="catalogue.html" class="mobile-drawer-link text-body-sm font-body-sm mt-2 pt-3 border-t border-outline-variant"><span class="material-symbols-outlined text-lg shrink-0">apps</span><span class="min-w-0">Tout le catalogue</span></a>
 </nav>
 <div class="px-5 mt-1">
 <a href="devis.html" class="btn-primary w-full text-center block">Demander un Devis Technique</a>
@@ -91,8 +95,8 @@
 </a>
 </div>
 <div class="mt-auto px-5 py-5 border-t border-outline-variant space-y-1">
-<a href="contact.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg">support_agent</span> Contacter le Support</a>
-<a href="entreprise.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg">verified</span> Certifications</a>
+<a href="contact.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg shrink-0">support_agent</span><span class="min-w-0">Contacter le Support</span></a>
+<a href="entreprise.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg shrink-0">verified</span><span class="min-w-0">Certifications</span></a>
 <div class="flex items-center gap-2 pt-3">
 <button class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant text-body-sm font-body-sm hover:bg-surface-container-low">
 <span class="material-symbols-outlined text-lg">language</span> FR
@@ -105,7 +109,7 @@
 </aside>
 <div class="flex flex-1 max-w-container-max mx-auto w-full">
 <!-- SideNavBar -->
-<aside class="hidden lg:flex flex-col h-full py-4 bg-surface-container-lowest text-primary docked h-[calc(100vh-80px)] left-0 w-64 border-r border-outline-variant sticky top-[80px]">
+<aside class="hidden lg:flex flex-col h-full py-4 bg-surface-container-lowest text-primary docked h-[calc(100vh-80px)] left-0 w-64 shrink-0 border-r border-outline-variant sticky top-[80px] overflow-y-auto">
 <div class="px-6 mb-8 mt-4">
 <div class="flex items-center gap-3 mb-2">
 <div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-on-primary-container">
@@ -118,20 +122,29 @@
 </div>
 </div>
 <nav class="flex-1 flex flex-col gap-1 px-4">
-<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=cereals">
-<span class="material-symbols-outlined text-on-primary-container">grass</span> Céréales &amp; Nutrition
-</a>
-<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=oils">
-<span class="material-symbols-outlined text-on-primary-container">oil_barrel</span> Huiles &amp; Graisses
-</a>
-<a class="sidebar-link is-active flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=machinery">
-<span class="material-symbols-outlined text-on-primary-container">agriculture</span> Matériel
-</a>
-<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=hydraulics">
-<span class="material-symbols-outlined text-on-primary-container">plumbing</span> Hydraulique
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=irrigation">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">water_drop</span><span class="min-w-0">Irrigation</span>
 </a>
 <a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=phyto">
-<span class="material-symbols-outlined text-on-primary-container">psychiatry</span> Phytosanitaire
+<span class="material-symbols-outlined text-on-primary-container shrink-0">psychiatry</span><span class="min-w-0">Produit Phytosanitaire</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=gardening">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">yard</span><span class="min-w-0">Jardinage</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=garden-tools">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">content_cut</span><span class="min-w-0">Outils de Jardinage</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=seeds">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">eco</span><span class="min-w-0">Semences</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=vitamins">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">science</span><span class="min-w-0">Vitamine</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=farm-tools">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">agriculture</span><span class="min-w-0">Outillage Agricole</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=beekeeping">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">hive</span><span class="min-w-0">Apiculteur</span>
 </a>
 </nav>
 <div class="px-4 mt-auto space-y-2">
@@ -140,61 +153,58 @@
                 </a>
 <div class="pt-4 border-t border-outline-variant space-y-1">
 <a class="flex items-center gap-3 px-4 py-2 rounded text-on-surface-variant hover:bg-surface-container-low text-body-sm font-body-sm" href="contact.html">
-<span class="material-symbols-outlined text-lg">support_agent</span> Contacter le Support
+<span class="material-symbols-outlined text-lg shrink-0">support_agent</span><span class="min-w-0">Contacter le Support</span>
 </a>
 <a class="flex items-center gap-3 px-4 py-2 rounded text-on-surface-variant hover:bg-surface-container-low text-body-sm font-body-sm" href="entreprise.html">
-<span class="material-symbols-outlined text-lg">verified</span> Certifications
+<span class="material-symbols-outlined text-lg shrink-0">verified</span><span class="min-w-0">Certifications</span>
 </a>
 </div>
 </div>
 </aside>
 <!-- Main Content -->
 <main class="flex-1 bg-surface p-margin-mobile md:p-margin-desktop">
-<nav class="text-body-sm font-body-sm text-on-surface-variant mb-6 flex items-center gap-2">
+<nav id="product-breadcrumb" class="text-body-sm font-body-sm text-on-surface-variant mb-6 flex items-center gap-2 flex-wrap">
 <a href="catalogue.html" class="hover:text-primary hover:underline">Catalogue</a>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-<span class="text-on-surface font-bold">Fiche produit</span>
 </nav>
-<div class="max-w-container-max mx-auto space-y-12">
 
-<!-- Product 1: Direct Sale -->
+<div id="product-not-found" class="hidden max-w-xl mx-auto text-center py-16 md:py-24">
+<span class="material-symbols-outlined text-6xl text-outline-variant mb-4">inventory_2</span>
+<h1 class="text-headline-lg font-headline-lg text-on-background mb-2">Produit introuvable</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Ce produit n'existe pas ou n'est plus disponible dans notre catalogue.</p>
+<a href="catalogue.html" class="btn-primary inline-block">Retour au catalogue</a>
+</div>
+
+<div id="product-detail" class="hidden max-w-container-max mx-auto space-y-10 mb-20 md:mb-0">
+
 <section class="bg-surface-container-lowest border border-outline-variant rounded p-6 shadow-sm">
 <div class="flex flex-col lg:flex-row gap-8">
-<div class="w-full lg:w-1/3">
-<div class="aspect-square bg-surface-container-lowest border border-outline-variant rounded flex items-center justify-center relative overflow-hidden">
-<img class="object-contain w-full h-full p-4" alt="Aliment Bétail Croissance 25kg" src="assets/images/product-detail-cereal-bag.jpg"/>
-<div class="absolute top-4 left-4 bg-[#e9c176] text-[#261900] text-label-md font-label-md px-2 py-1 rounded flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">grass</span> Céréales
+<div class="w-full lg:w-2/5">
+<div class="aspect-square bg-white border border-outline-variant rounded flex items-center justify-center relative overflow-hidden">
+<img id="product-image" class="hidden object-contain w-full h-full p-6" alt=""/>
+<span id="product-image-fallback" class="hidden material-symbols-outlined text-8xl text-outline-variant"></span>
+<div id="product-badge" class="absolute top-4 left-4 text-label-md font-label-md px-2 py-1 rounded flex items-center gap-1 font-bold uppercase"></div>
+<div id="product-regulated-badge" class="hidden absolute top-4 right-4 bg-error text-white text-label-md font-label-md px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span> Réglementé
 </div>
 </div>
 </div>
-<div class="w-full lg:w-2/3 flex flex-col">
-<h1 class="text-headline-lg font-headline-lg text-on-surface mb-2">Aliment Bétail Croissance 25kg</h1>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6">Mélange céréalier enrichi pour bovins en phase de croissance. Conditionnement standard pour manutention manuelle.</p>
+<div class="w-full lg:w-3/5 flex flex-col">
+<h1 id="product-title" class="text-headline-lg font-headline-lg text-on-surface mb-2"></h1>
+<p id="product-description" class="text-body-md font-body-md text-on-surface-variant mb-6"></p>
 <div class="flex items-baseline gap-4 mb-8">
-<span class="text-display-lg font-display-lg text-primary">2,100 DZD</span>
-<span class="text-body-sm font-body-sm text-outline">HT / Unité</span>
+<span id="product-price" class="text-display-lg font-display-lg text-primary"></span>
 </div>
-<div class="grid grid-cols-2 gap-4 mb-8 border-y border-outline-variant py-4">
-<div>
-<span class="block text-label-md font-label-md text-outline uppercase tracking-wider">Conditionnement</span>
-<span class="text-technical-data font-technical-data text-on-surface">Sac 25kg (Palettes de 40)</span>
-</div>
-<div>
-<span class="block text-label-md font-label-md text-outline uppercase tracking-wider">Disponibilité</span>
-<span class="text-technical-data font-technical-data text-[#43655c] flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">check_circle</span> En Stock (Dépôt Alger)</span>
-</div>
-</div>
+<div id="product-specs" class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 mb-8 border-y border-outline-variant py-4"></div>
 <div class="mt-auto flex flex-col sm:flex-row gap-4 items-end">
 <div class="flex flex-col gap-2 w-full sm:w-32">
-<label class="text-label-md font-label-md text-on-surface" for="qty-product-1">Quantité</label>
+<label class="text-label-md font-label-md text-on-surface" for="product-qty">Quantité</label>
 <div class="flex items-stretch border border-outline-variant rounded overflow-hidden">
-<button type="button" data-step="qty-product-1" data-action="decrement" class="px-3 bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-bold">−</button>
-<input id="qty-product-1" class="w-full text-center border-x border-outline-variant focus:outline-none text-body-md" min="1" type="number" value="1"/>
-<button type="button" data-step="qty-product-1" data-action="increment" class="px-3 bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-bold">+</button>
+<button type="button" data-step="product-qty" data-action="decrement" class="px-3 bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-bold">−</button>
+<input id="product-qty" class="w-full text-center border-x border-outline-variant focus:outline-none text-body-md" min="1" type="number" value="1"/>
+<button type="button" data-step="product-qty" data-action="increment" class="px-3 bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-bold">+</button>
 </div>
 </div>
-<button data-add-cart class="bg-[#775a19] text-white font-label-md text-label-md px-6 py-3 uppercase rounded tracking-wider hover:opacity-90 transition-opacity flex-1 flex items-center justify-center gap-2">
+<button data-add-cart class="bg-surface-container-high text-on-surface font-label-md text-label-md px-6 py-3 uppercase rounded tracking-wider hover:bg-surface-container-highest transition-colors flex-1 flex items-center justify-center gap-2 border-2 border-outline-variant">
 <span class="material-symbols-outlined">add_shopping_cart</span> Ajouter au panier
 </button>
 </div>
@@ -202,55 +212,114 @@
 </div>
 </section>
 
-<!-- Product 2: Heavy Equipment (Quote Request) -->
-<section class="bg-surface-container-lowest border border-outline-variant rounded p-6 shadow-sm">
-<div class="flex flex-col lg:flex-row gap-8">
-<div class="w-full lg:w-1/3">
-<div class="aspect-square bg-surface-container-lowest border border-outline-variant rounded flex items-center justify-center relative overflow-hidden">
-<img class="object-contain w-full h-full p-4" alt="Pompe Hydraulique Haute Pression HPX-5000" src="assets/images/product-detail-hydraulic-pump.jpg"/>
-<div class="absolute top-4 left-4 bg-[#717976] text-white text-label-md font-label-md px-2 py-1 rounded flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">agriculture</span> Matériel
+<!-- Formulaire de commande -->
+<section id="order-section" class="bg-surface-container-lowest border-2 border-primary rounded-lg p-6 md:p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary text-3xl">shopping_cart</span>
+<h2 class="text-headline-md font-headline-md text-primary">Commander maintenant</h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Paiement à la livraison. Renseignez vos coordonnées, notre équipe vous contactera pour confirmer votre commande.</p>
+<form id="order-form" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="sm:col-span-2">
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="order-name">Nom complet *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">person</span>
+<input id="order-name" name="name" type="text" required class="w-full bg-white border border-outline-variant rounded pl-10 pr-3 py-2.5 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Ex : Ahmed Benali"/>
 </div>
 </div>
-</div>
-<div class="w-full lg:w-2/3 flex flex-col">
-<h2 class="text-headline-lg font-headline-lg text-on-surface mb-2">Pompe Hydraulique Haute Pression HPX-5000</h2>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6">Système de pompage industriel pour équipements lourds agricoles. Conception renforcée pour environnements extrêmes.</p>
-<div class="bg-surface-container-low border border-outline-variant rounded p-4 mb-6">
-<h3 class="text-label-md font-label-md text-on-surface uppercase tracking-wider mb-3">Résumé Spécifications Techniques</h3>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4">
-<div class="flex justify-between border-b border-outline-variant pb-1">
-<span class="text-technical-data font-technical-data text-outline">Pression Max</span>
-<span class="text-technical-data font-technical-data text-on-surface">350 bar</span>
-</div>
-<div class="flex justify-between border-b border-outline-variant pb-1">
-<span class="text-technical-data font-technical-data text-outline">Débit</span>
-<span class="text-technical-data font-technical-data text-on-surface">120 L/min</span>
-</div>
-<div class="flex justify-between border-b border-outline-variant pb-1">
-<span class="text-technical-data font-technical-data text-outline">Poids</span>
-<span class="text-technical-data font-technical-data text-on-surface">185 kg</span>
-</div>
-<div class="flex justify-between border-b border-outline-variant pb-1">
-<span class="text-technical-data font-technical-data text-outline">Raccordement</span>
-<span class="text-technical-data font-technical-data text-on-surface">Bride SAE 1" 1/4</span>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="order-phone">Numéro de téléphone *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">call</span>
+<input id="order-phone" name="phone" type="tel" required pattern="0[5-7][0-9]{8}" class="w-full bg-white border border-outline-variant rounded pl-10 pr-3 py-2.5 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="0555 12 34 56"/>
 </div>
 </div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="order-qty-form">Quantité</label>
+<input id="order-qty-form" name="quantity" type="number" min="1" value="1" class="w-full bg-white border border-outline-variant rounded px-3 py-2.5 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"/>
 </div>
-<div class="flex flex-wrap gap-4 mb-8">
-<button class="border-2 border-[#717976] text-[#717976] font-label-md text-label-md px-4 py-2 uppercase rounded tracking-wider hover:bg-surface-container-low transition-colors flex items-center gap-2">
-<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span> Fiche Technique
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="order-wilaya">Wilaya *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">location_on</span>
+<select id="order-wilaya" name="wilaya" required class="w-full bg-white border border-outline-variant rounded pl-10 pr-3 py-2.5 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-on-surface-variant">
+<option value="" disabled selected>Sélectionnez votre wilaya</option>
+<option>01 - Adrar</option>
+<option>02 - Chlef</option>
+<option>03 - Laghouat</option>
+<option>04 - Oum El Bouaghi</option>
+<option>05 - Batna</option>
+<option>06 - Béjaïa</option>
+<option>07 - Biskra</option>
+<option>08 - Béchar</option>
+<option>09 - Blida</option>
+<option>10 - Bouira</option>
+<option>11 - Tamanrasset</option>
+<option>12 - Tébessa</option>
+<option>13 - Tlemcen</option>
+<option>14 - Tiaret</option>
+<option>15 - Tizi Ouzou</option>
+<option>16 - Alger</option>
+<option>17 - Djelfa</option>
+<option>18 - Jijel</option>
+<option>19 - Sétif</option>
+<option>20 - Saïda</option>
+<option>21 - Skikda</option>
+<option>22 - Sidi Bel Abbès</option>
+<option>23 - Annaba</option>
+<option>24 - Guelma</option>
+<option>25 - Constantine</option>
+<option>26 - Médéa</option>
+<option>27 - Mostaganem</option>
+<option>28 - M'Sila</option>
+<option>29 - Mascara</option>
+<option>30 - Ouargla</option>
+<option>31 - Oran</option>
+<option>32 - El Bayadh</option>
+<option>33 - Illizi</option>
+<option>34 - Bordj Bou Arréridj</option>
+<option>35 - Boumerdès</option>
+<option>36 - El Tarf</option>
+<option>37 - Tindouf</option>
+<option>38 - Tissemsilt</option>
+<option>39 - El Oued</option>
+<option>40 - Khenchela</option>
+<option>41 - Souk Ahras</option>
+<option>42 - Tipaza</option>
+<option>43 - Mila</option>
+<option>44 - Aïn Defla</option>
+<option>45 - Naâma</option>
+<option>46 - Aïn Témouchent</option>
+<option>47 - Ghardaïa</option>
+<option>48 - Relizane</option>
+<option>49 - Timimoun</option>
+<option>50 - Bordj Badji Mokhtar</option>
+<option>51 - Ouled Djellal</option>
+<option>52 - Béni Abbès</option>
+<option>53 - In Salah</option>
+<option>54 - In Guezzam</option>
+<option>55 - Touggourt</option>
+<option>56 - Djanet</option>
+<option>57 - El M'Ghair</option>
+<option>58 - El Meniaa</option>
+</select>
+</div>
+</div>
+<div class="sm:col-span-2">
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="order-commune">Commune *</label>
+<input id="order-commune" name="commune" type="text" required class="w-full bg-white border border-outline-variant rounded px-3 py-2.5 text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Ex : Bouira Centre"/>
+</div>
+<div class="sm:col-span-2">
+<button type="submit" class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 px-4 rounded hover:bg-opacity-90 transition-colors uppercase tracking-wider flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span> Confirmer ma commande
 </button>
-<button class="border-2 border-[#717976] text-[#717976] font-label-md text-label-md px-4 py-2 uppercase rounded tracking-wider hover:bg-surface-container-low transition-colors flex items-center gap-2">
-<span class="material-symbols-outlined text-[18px]">security</span> FDS
-</button>
+<p class="text-[11px] text-outline mt-2 text-center leading-tight">En confirmant, j'accepte d'être contacté(e) par SDDA pour valider ma commande.</p>
 </div>
-<div class="mt-auto">
-<a href="devis.html" class="w-full bg-primary text-white font-label-md text-label-md px-6 py-4 uppercase rounded tracking-wider hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-<span class="material-symbols-outlined">request_quote</span> Demander un devis technique
-</a>
-</div>
-</div>
+</form>
+<div id="order-confirm" class="hidden text-center py-8">
+<span class="material-symbols-outlined text-6xl text-primary mb-3">check_circle</span>
+<h3 class="text-headline-md font-headline-md text-primary mb-2">Commande enregistrée !</h3>
+<p id="order-confirm-text" class="text-body-md font-body-md text-on-surface-variant max-w-md mx-auto"></p>
 </div>
 </section>
 
@@ -260,7 +329,7 @@
 <!-- Footer -->
 <footer class="w-full bg-tertiary text-on-tertiary border-t border-tertiary-container mt-auto">
 <div class="px-margin-mobile lg:px-margin-desktop py-12 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="text-headline-sm font-headline-sm font-black text-on-tertiary">AGRIVAL</div>
+<div class="text-headline-sm font-headline-sm font-black text-on-tertiary">SDDA</div>
 <div class="flex flex-wrap justify-center gap-6">
 <a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="entreprise.html">Mentions Légales</a>
 <a class="text-surface-dim hover:text-on-tertiary hover:underline transition-all text-label-md font-label-md" href="contact.html">Couverture Géographique</a>
@@ -270,9 +339,36 @@
 </div>
 </div>
 <div class="text-center pb-8 text-body-sm font-body-sm text-surface-dim opacity-70">
-            © 2024 AGRIVAL SARL - Excellence Industrielle Agricole. Tous droits réservés.
+            Bouira, Algérie · <a class="hover:text-on-tertiary hover:underline" href="tel:+213661661848">+213 661 661 848</a> · <a class="hover:text-on-tertiary hover:underline" href="mailto:sctdjema.developement.agricole@gmail.com">sctdjema.developement.agricole@gmail.com</a><br/>
+            © 2024 SARL SDDA - Société Djemaa Développement Agricole. Tous droits réservés.
         </div>
 </footer>
+<a id="product-whatsapp-fab" href="https://wa.me/213550534963" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Contactez-nous sur WhatsApp" title="WhatsApp : +213 550 534 963">
+<span class="material-symbols-outlined" aria-hidden="true">chat</span>
+</a>
+<!-- Barre d'action collante (mobile) -->
+<div id="product-sticky-bar" class="fixed bottom-0 inset-x-0 z-[70] bg-surface-container-lowest border-t border-outline-variant shadow-[0_-4px_12px_rgba(0,0,0,0.12)] px-4 py-3 items-center gap-3" style="padding-bottom: max(0.75rem, env(safe-area-inset-bottom));">
+<a id="sticky-whatsapp-btn" href="https://wa.me/213550534963" target="_blank" rel="noopener" class="shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-[#25d366] text-white" aria-label="Commander via WhatsApp">
+<span class="material-symbols-outlined">chat</span>
+</a>
+<button type="button" id="sticky-order-btn" class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-3 rounded uppercase tracking-wider font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span> Commander
+</button>
+</div>
+<!-- Recherche produits -->
+<div id="search-overlay-backdrop" class="hidden opacity-0 fixed inset-0 bg-black/50 z-[80]"></div>
+<div id="search-overlay" class="hidden opacity-0 -translate-y-2 fixed inset-x-0 top-0 z-[90] flex justify-center px-4 pt-4 sm:pt-20" role="dialog" aria-modal="true" aria-label="Recherche produits">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-lg shadow-2xl overflow-hidden max-h-[80vh] flex flex-col">
+<div class="flex items-center gap-3 px-4 py-3 border-b border-outline-variant shrink-0">
+<span class="material-symbols-outlined text-outline">search</span>
+<input id="search-input" type="text" placeholder="Rechercher un produit, une référence..." class="flex-1 min-w-0 bg-transparent outline-none text-body-lg font-body-lg text-on-surface placeholder:text-outline" autocomplete="off"/>
+<button id="search-close" class="p-1 text-outline hover:text-on-surface shrink-0" aria-label="Fermer la recherche">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div id="search-results" class="overflow-y-auto flex-1"></div>
+</div>
+</div>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -3,31 +3,32 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>L'entreprise - AGRIVAL</title>
-<meta name="description" content="AGRIVAL Algérie : histoire, mission, agréments réglementaires, couverture nationale et service après-vente technique."/>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2220%22>🌾</text></svg>"/>
+<title>L'entreprise - SDDA</title>
+<meta name="description" content="SDDA Algérie : histoire, mission, agréments réglementaires, couverture nationale et service après-vente technique."/>
+<link rel="icon" href="assets/images/logo.png" type="image/png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <script src="assets/js/tailwind-config.js"></script>
+<script src="assets/js/products-data.js"></script>
 <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
 <!-- TopNavBar -->
 <header class="flex flex-col w-full bg-primary text-on-primary border-b border-outline-variant full-width top-0 z-50 sticky">
 <div class="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-4 flex items-center justify-between">
-<a href="index.html" class="flex items-center gap-2">
-<span class="material-symbols-outlined text-3xl">agriculture</span>
-<span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">AGRIVAL</span>
+<a href="index.html" class="flex items-center gap-2 bg-white rounded-lg px-3 py-1.5 shadow-sm">
+<img src="assets/images/logo.png" alt="SDDA - Société Djemaa Développement Agricole" class="h-14 sm:h-16 md:h-20 w-auto"/>
 </a>
 <nav class="hidden md:flex items-center gap-6">
-<a data-nav-link href="catalogue.html?cat=cereals" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Céréales</a>
-<a data-nav-link href="catalogue.html?cat=oils" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Huiles Végétales</a>
-<a data-nav-link href="catalogue.html?cat=machinery" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Matériel</a>
-<a data-nav-link href="catalogue.html?cat=hydraulics" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Hydraulique</a>
+<a data-nav-link href="catalogue.html?cat=irrigation" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Irrigation</a>
 <a data-nav-link href="catalogue.html?cat=phyto" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Phytosanitaire</a>
+<a data-nav-link href="catalogue.html?cat=gardening" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Jardinage</a>
+<a data-nav-link href="catalogue.html?cat=farm-tools" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Outillage Agricole</a>
+<a href="catalogue.html" class="text-on-primary opacity-80 hover:opacity-100 hover:bg-primary-container transition-colors duration-200 px-3 py-2 rounded text-label-md font-label-md">Catalogue</a>
 </nav>
 <div class="flex items-center gap-4">
+<button id="search-open-btn" class="text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded-full hover:bg-primary-container" aria-label="Rechercher un produit" title="Rechercher">
+<span class="material-symbols-outlined">search</span>
+</button>
 <div class="hidden lg:flex items-center gap-4 border-r border-outline-variant pr-4">
 <button class="text-on-primary opacity-80 hover:opacity-100 transition-colors p-2 rounded-full hover:bg-primary-container" title="Langue">
 <span class="material-symbols-outlined">language</span>
@@ -54,9 +55,8 @@
 <div id="mobile-menu-backdrop" class="hidden opacity-0 fixed inset-0 bg-black/50 z-[60] md:hidden"></div>
 <aside id="mobile-menu" class="translate-x-full fixed top-0 right-0 h-full w-[86%] max-w-sm bg-surface-container-lowest z-[70] md:hidden flex flex-col overflow-y-auto shadow-2xl" role="dialog" aria-modal="true" aria-label="Menu de navigation">
 <div class="flex items-center justify-between px-5 py-4 bg-primary text-on-primary shrink-0">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-2xl">agriculture</span>
-<span class="text-headline-sm font-headline-sm font-bold">AGRIVAL</span>
+<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-1.5 shadow-sm">
+<img src="assets/images/logo.png" alt="SDDA - Société Djemaa Développement Agricole" class="h-14 w-auto"/>
 </div>
 <button id="mobile-menu-close" class="p-2 -mr-2 text-on-primary" aria-label="Fermer le menu">
 <span class="material-symbols-outlined">close</span>
@@ -72,11 +72,15 @@
 </div>
 </div>
 <nav class="flex flex-col gap-1 px-3 py-3">
-<a data-nav-link href="catalogue.html?cat=cereals" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">grass</span> Céréales &amp; Nutrition</a>
-<a data-nav-link href="catalogue.html?cat=oils" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">oil_barrel</span> Huiles &amp; Graisses</a>
-<a data-nav-link href="catalogue.html?cat=machinery" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">agriculture</span> Matériel</a>
-<a data-nav-link href="catalogue.html?cat=hydraulics" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">plumbing</span> Hydraulique</a>
-<a data-nav-link href="catalogue.html?cat=phyto" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container">psychiatry</span> Phytosanitaire</a>
+<a data-nav-link href="catalogue.html?cat=irrigation" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">water_drop</span><span class="min-w-0">Irrigation</span></a>
+<a data-nav-link href="catalogue.html?cat=phyto" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">psychiatry</span><span class="min-w-0">Produit Phytosanitaire</span></a>
+<a data-nav-link href="catalogue.html?cat=gardening" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">yard</span><span class="min-w-0">Jardinage</span></a>
+<a data-nav-link href="catalogue.html?cat=garden-tools" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">content_cut</span><span class="min-w-0">Outils de Jardinage</span></a>
+<a data-nav-link href="catalogue.html?cat=seeds" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">eco</span><span class="min-w-0">Semences</span></a>
+<a data-nav-link href="catalogue.html?cat=vitamins" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">science</span><span class="min-w-0">Vitamine</span></a>
+<a data-nav-link href="catalogue.html?cat=farm-tools" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">agriculture</span><span class="min-w-0">Outillage Agricole</span></a>
+<a data-nav-link href="catalogue.html?cat=beekeeping" class="mobile-drawer-link text-body-md font-body-md"><span class="material-symbols-outlined text-on-primary-container shrink-0">hive</span><span class="min-w-0">Apiculteur</span></a>
+<a href="catalogue.html" class="mobile-drawer-link text-body-sm font-body-sm mt-2 pt-3 border-t border-outline-variant"><span class="material-symbols-outlined text-lg shrink-0">apps</span><span class="min-w-0">Tout le catalogue</span></a>
 </nav>
 <div class="px-5 mt-1">
 <a href="devis.html" class="btn-primary w-full text-center block">Demander un Devis Technique</a>
@@ -91,8 +95,8 @@
 </a>
 </div>
 <div class="mt-auto px-5 py-5 border-t border-outline-variant space-y-1">
-<a href="contact.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg">support_agent</span> Contacter le Support</a>
-<a href="entreprise.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg">verified</span> Certifications</a>
+<a href="contact.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg shrink-0">support_agent</span><span class="min-w-0">Contacter le Support</span></a>
+<a href="entreprise.html" class="mobile-drawer-link text-body-sm font-body-sm"><span class="material-symbols-outlined text-lg shrink-0">verified</span><span class="min-w-0">Certifications</span></a>
 <div class="flex items-center gap-2 pt-3">
 <button class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant text-body-sm font-body-sm hover:bg-surface-container-low">
 <span class="material-symbols-outlined text-lg">language</span> FR
@@ -105,7 +109,7 @@
 </aside>
 <div class="flex flex-1 max-w-container-max mx-auto w-full">
 <!-- SideNavBar -->
-<aside class="hidden lg:flex flex-col h-full py-4 bg-surface-container-lowest text-primary docked h-[calc(100vh-80px)] left-0 w-64 border-r border-outline-variant sticky top-[80px]">
+<aside class="hidden lg:flex flex-col h-full py-4 bg-surface-container-lowest text-primary docked h-[calc(100vh-80px)] left-0 w-64 shrink-0 border-r border-outline-variant sticky top-[80px]">
 <div class="px-6 mb-8 mt-4">
 <div class="flex items-center gap-3 mb-2">
 <div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center text-on-primary-container">
@@ -118,20 +122,29 @@
 </div>
 </div>
 <nav class="flex-1 flex flex-col gap-1 px-4">
-<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=cereals">
-<span class="material-symbols-outlined text-on-primary-container">grass</span> Céréales &amp; Nutrition
-</a>
-<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=oils">
-<span class="material-symbols-outlined text-on-primary-container">oil_barrel</span> Huiles &amp; Graisses
-</a>
-<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=machinery">
-<span class="material-symbols-outlined text-on-primary-container">agriculture</span> Matériel
-</a>
-<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=hydraulics">
-<span class="material-symbols-outlined text-on-primary-container">plumbing</span> Hydraulique
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=irrigation">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">water_drop</span><span class="min-w-0">Irrigation</span>
 </a>
 <a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=phyto">
-<span class="material-symbols-outlined text-on-primary-container">psychiatry</span> Phytosanitaire
+<span class="material-symbols-outlined text-on-primary-container shrink-0">psychiatry</span><span class="min-w-0">Produit Phytosanitaire</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=gardening">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">yard</span><span class="min-w-0">Jardinage</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=garden-tools">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">content_cut</span><span class="min-w-0">Outils de Jardinage</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=seeds">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">eco</span><span class="min-w-0">Semences</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=vitamins">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">science</span><span class="min-w-0">Vitamine</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=farm-tools">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">agriculture</span><span class="min-w-0">Outillage Agricole</span>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-4 py-3 rounded text-on-surface-variant hover:bg-surface-container-high transition-all text-body-md font-body-md" href="catalogue.html?cat=beekeeping">
+<span class="material-symbols-outlined text-on-primary-container shrink-0">hive</span><span class="min-w-0">Apiculteur</span>
 </a>
 </nav>
 <div class="px-4 mt-auto space-y-2">
@@ -140,10 +153,10 @@
                 </a>
 <div class="pt-4 border-t border-outline-variant space-y-1">
 <a class="flex items-center gap-3 px-4 py-2 rounded text-on-surface-variant hover:bg-surface-container-low text-body-sm font-body-sm" href="contact.html">
-<span class="material-symbols-outlined text-lg">support_agent</span> Contacter le Support
+<span class="material-symbols-outlined text-lg shrink-0">support_agent</span><span class="min-w-0">Contacter le Support</span>
 </a>
 <a class="sidebar-link is-active flex items-center gap-3 px-4 py-2 rounded text-on-surface-variant hover:bg-surface-container-low text-body-sm font-body-sm" href="entreprise.html">
-<span class="material-symbols-outlined text-lg">verified</span> Certifications
+<span class="material-symbols-outlined text-lg shrink-0">verified</span><span class="min-w-0">Certifications</span>
 </a>
 </div>
 </div>
@@ -153,11 +166,52 @@
 <div class="mb-8 md:mb-12 border-b border-outline-variant pb-6">
 <h1 class="text-display-lg font-display-lg text-primary mb-4">Excellence Industrielle &amp; Agricole en Algérie</h1>
 <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
-                    SARL AGRIVAL, basée à Alger, est le partenaire stratégique des professionnels de l'agriculture et de l'industrie.
+                    SARL SDDA (Société Djemaa Développement Agricole), basée à Bouira, est le partenaire stratégique des professionnels de l'agriculture et de l'industrie.
                     Nous fournissons des solutions techniques de pointe, des matières premières de haute qualité et un
                     accompagnement réglementaire strict.
                 </p>
 </div>
+<!-- Objet Social -->
+<section class="mb-10 md:mb-16">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-6">Objet Social &amp; Activités</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 flex flex-col gap-3">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined">grass</span>
+</div>
+<h3 class="text-label-md font-label-md font-bold text-primary uppercase tracking-wide">Céréales &amp; Aliments du Bétail</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Production et commerce de gros des céréales, de leurs dérivés et de tous les aliments du bétail.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 flex flex-col gap-3">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined">oil_barrel</span>
+</div>
+<h3 class="text-label-md font-label-md font-bold text-primary uppercase tracking-wide">Huiles &amp; Graisses</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Commerce de gros des huiles et des graisses non combustibles.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 flex flex-col gap-3">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined">agriculture</span>
+</div>
+<h3 class="text-label-md font-label-md font-bold text-primary uppercase tracking-wide">Équipements &amp; Machines Agricoles</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Commerce de gros de machines, matériels et équipements agricoles (tracteurs, moissonneuses, batteuses, botteleuses...) ainsi que des pièces détachées et pneumatiques du matériel roulant agricole.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 flex flex-col gap-3">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined">plumbing</span>
+</div>
+<h3 class="text-label-md font-label-md font-bold text-primary uppercase tracking-wide">Matériels Hydrauliques</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Commerce de gros de matériels hydrauliques destinés à l'agriculture : pompes, distributeurs, crics et vérins hydrauliques, compresseurs d'air...</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-5 flex flex-col gap-3">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined">psychiatry</span>
+</div>
+<h3 class="text-label-md font-label-md font-bold text-primary uppercase tracking-wide">Engrais &amp; Phytosanitaire</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Commerce de gros des engrais et produits phytosanitaires.</p>
+</div>
+</div>
+</section>
 <!-- Bento Grid Layout -->
 <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter mb-10 md:mb-16">
 <div class="col-span-1 md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-lg p-8 relative overflow-hidden flex flex-col justify-center">
@@ -165,8 +219,8 @@
 <h2 class="text-headline-lg font-headline-lg text-primary mb-6 relative z-10">Histoire &amp; Mission en Algérie</h2>
 <p class="text-body-md font-body-md text-on-surface mb-4 relative z-10">
                         Fondée avec la vision de structurer et de sécuriser la chaîne d'approvisionnement agricole en Algérie,
-                        AGRIVAL s'est imposée comme un acteur majeur dans l'import-export et la distribution de solutions
-                        industrielles globales, d'Alger à Oran, et jusqu'au Sud. Notre croissance est fondée sur la rigueur technique, la fiabilité logistique
+                        SDDA s'est imposée comme un acteur majeur dans l'import-export et la distribution de solutions
+                        industrielles globales, de Bouira à Alger, Oran, et jusqu'au Sud. Notre croissance est fondée sur la rigueur technique, la fiabilité logistique
                         et une compréhension profonde des enjeux agronomiques locaux.
                     </p>
 <p class="text-body-md font-body-md text-on-surface relative z-10">
@@ -201,7 +255,7 @@
 <div class="bg-error-container border border-error rounded-lg p-6 md:p-8">
 <p class="text-body-md font-body-md text-on-error-container mb-6 font-semibold">
                         La distribution de produits phytosanitaires et de produits chimiques industriels exige un cadre légal absolu.
-                        AGRIVAL opère sous des autorisations strictes, garantissant la traçabilité et la sécurité selon les normes algériennes.
+                        SDDA opère sous des autorisations strictes, garantissant la traçabilité et la sécurité selon les normes algériennes.
                     </p>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 <div class="bg-surface-container-lowest border border-error-container rounded p-4 shadow-sm">
@@ -232,10 +286,10 @@
                         </h2>
 </div>
 <div class="relative h-64 sm:h-80 w-full bg-surface-variant shrink-0">
-<img class="absolute inset-0 w-full h-full object-cover opacity-90" alt="Carte de couverture logistique AGRIVAL en Algérie" src="assets/images/algeria-map.png"/>
+<img class="absolute inset-0 w-full h-full object-cover opacity-90" alt="Carte de couverture logistique SDDA en Algérie" src="assets/images/algeria-map.png"/>
 <div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/90 backdrop-blur-sm border border-outline-variant p-4 rounded text-body-sm font-body-sm">
 <strong class="block text-primary mb-1">Réseau Logistique Intégré</strong>
-<p class="text-on-surface-variant">Flotte de camions spécialisés et centres de distribution régionaux (Alger, Oran, Sétif) assurant des livraisons rapides vers toutes les wilayas.</p>
+<p class="text-on-surface-variant">Flotte de camions spécialisés depuis notre siège de Bouira et centres de distribution régionaux (Alger, Oran, Sétif) assurant des livraisons rapides vers toutes les wilayas.</p>
 </div>
 </div>
 </div>
@@ -289,10 +343,11 @@
 <footer class="bg-tertiary text-on-tertiary border-t border-tertiary-container w-full mt-auto">
 <div class="w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
 <div class="flex flex-col items-center md:items-start text-on-tertiary">
-<a href="index.html" class="text-headline-sm font-headline-sm font-black mb-2">SARL AGRIVAL</a>
+<a href="index.html" class="text-headline-sm font-headline-sm font-black mb-2">SDDA</a>
 <p class="text-body-sm font-body-sm text-surface-dim opacity-80 text-center md:text-left">
-                    Siège Social: Alger, Algérie<br/>
-                    © 2024 SARL AGRIVAL - Excellence Industrielle Agricole. Tous droits réservés.
+                    Siège Social : Bouira, Algérie<br/>
+                    <a class="hover:text-on-tertiary hover:underline" href="tel:+213661661848">+213 661 661 848</a> · <a class="hover:text-on-tertiary hover:underline" href="mailto:sctdjema.developement.agricole@gmail.com">sctdjema.developement.agricole@gmail.com</a><br/>
+                    © 2024 SARL SDDA - Société Djemaa Développement Agricole. Tous droits réservés.
                 </p>
 </div>
 <nav class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-label-md font-label-md">
@@ -304,6 +359,23 @@
 </nav>
 </div>
 </footer>
+<a href="https://wa.me/213550534963" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Contactez-nous sur WhatsApp" title="WhatsApp : +213 550 534 963">
+<span class="material-symbols-outlined" aria-hidden="true">chat</span>
+</a>
+<!-- Recherche produits -->
+<div id="search-overlay-backdrop" class="hidden opacity-0 fixed inset-0 bg-black/50 z-[80]"></div>
+<div id="search-overlay" class="hidden opacity-0 -translate-y-2 fixed inset-x-0 top-0 z-[90] flex justify-center px-4 pt-4 sm:pt-20" role="dialog" aria-modal="true" aria-label="Recherche produits">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-lg shadow-2xl overflow-hidden max-h-[80vh] flex flex-col">
+<div class="flex items-center gap-3 px-4 py-3 border-b border-outline-variant shrink-0">
+<span class="material-symbols-outlined text-outline">search</span>
+<input id="search-input" type="text" placeholder="Rechercher un produit, une référence..." class="flex-1 min-w-0 bg-transparent outline-none text-body-lg font-body-lg text-on-surface placeholder:text-outline" autocomplete="off"/>
+<button id="search-close" class="p-1 text-outline hover:text-on-surface shrink-0" aria-label="Fermer la recherche">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div id="search-results" class="overflow-y-auto flex-1"></div>
+</div>
+</div>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
